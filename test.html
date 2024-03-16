@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  	<link rel="stylesheet" href="screen.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-treeview/1.4.2/jquery.treeview.min.js"></script>
+
+  <link rel="stylesheet" href="jquery.treeview.css" />
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
+<script src="jquery.treeview.js" type="text/javascript"></script>
+
+<style>
+  body{
+    background-color: blue;
+  }
+</style>
+</head>
+<body>
+  <ul id="tree">
+		<li><span>Item 1</span>
+			<ul>
+				<li><span>Item 1.0</span>
+					<ul>
+						<li><span>Item 1.0.0</span></li>
+            <li><span>Item 1.0.1</span></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li id="36" class="hasChildren">
+			<span>Item 2</span>
+			<ul>
+				<li><span class="placeholder">hello</span></li>
+			</ul>
+		</li>
+		<li>
+			<span>Item 3</span>
+		</li>
+	</ul>
+
+  <script>
+    $("#tree").treeview({
+  collapsed: true,
+  animated: "fast"
+});
+  </script>
+  
+</body>
+</html>

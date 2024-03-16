@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="allList.css">
+  <script>
+    window.onload = function () {
+      var modalOpen = document.querySelector(".modal-open");
+      var modalClose = document.querySelector(".modal-close");
+      var penaltyUpdateModal = document.querySelector("#penaltyUpdateModal")
+
+      modalClose.onclick = function () {
+        penaltyUpdateModal.style.display = "none";
+      }
+      
+
+    }
+
+    function modalOpen() {
+        penaltyUpdateModal.style.display = "flex";
+    }
+
+  </script>
+</head>
+
+<body>
+
+  <h3>입주 관리</h3>
+  <hr>
+  <div id="listArea">
+    <div id="lookUpBtn">
+      <input type="text"><button>조회하기</button>
+    </div>
+    <table style="margin-top: 30px; width: 100%;">
+      <tr>
+        <th>조회 내역</th>
+      </tr>
+
+      <tr>
+        <td>
+          <div id="detailsList">
+            <div id="modfiyBtn">
+              <button>수정하기</button>
+            </div>
+
+            <table id="ListTable">
+              <thead>
+                <tr>
+                  <th>입주모집번호</th>
+                  <th>학번</th>
+                  <th>호실</th>
+                  <th>상태구분</th>
+                  <th>신청일자</th>
+                  <th>선발일자</th>
+                  <th>배정일자</th>
+                  <th>입주일자</th>
+                  <th>퇴실입자</th>
+                  <th>퇴실구분</th>
+                  <th colspan="2">상벌총점</th>
+                  <th>비고</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>202403</td>
+                  <td>1234567</td>
+                  <td>205호</td>
+                  <td>
+                    <select>
+                      <option value="1">신청</option>
+                      <option value="2">선발</option>
+                      <option value="3">배정</option>
+                      <option value="4">입주</option>
+                      <option value="5">퇴실</option>
+                    </select>
+                  </td>
+                  <td>2024-03-15</td>
+                  <td>2024-03-15</td>
+                  <td>2024-03-15</td>
+                  <td>2024-03-15</td>
+                  <td>2024-03-15</td>
+                  <td>
+                    <select>
+                      <option value="1">만기</option>
+                      <option value="2">중도</option>
+                      <option value="3">벌점</option>
+                    </select>
+                  </td>
+                  <td>-10점</td>
+                  <td><button onclick="modalOpen()">상벌주기</button></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>202403</td>
+                  <td>1234567</td>
+                  <td>205호</td>
+                  <td>
+                    <select>
+                      <option value="1">신청</option>
+                      <option value="2">선발</option>
+                      <option value="3">배정</option>
+                      <option value="4">입주</option>
+                      <option value="5">퇴실</option>
+                    </select>
+                  </td>
+                  <td>2024-03-15</td>
+                  <td>2024-03-15</td>
+                  <td>2024-03-15</td>
+                  <td>2024-03-15</td>
+                  <td>2024-03-15</td>
+                  <td>
+                    <select>
+                      <option value="1">만기</option>
+                      <option value="2">중도</option>
+                      <option value="3">벌점</option>
+                    </select>
+                  </td>
+                  <td style="width: 100px;">-10점</td>
+                  <td style="width: 100px;"><button onclick="modalOpen()">상벌주기</button></td>
+                  <td></td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- 여기가 모달 창 -->
+  </div>
+
+  <section id="penaltyUpdateModal" style="display: none;">
+    <div class="PUM_wrap" style="position: relative; opacity: 1;" >
+      <div class="PUM_container">
+        <div class="PUM_item">
+          <i class="fa-solid fa-x fa-2x modal-close" aria-hidden="true"
+            style="position: absolute; top: 30px; right: 50px;"></i>
+          <br>
+          <h4>벌점 사항</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>기준코드</th>
+                <th>벌점</th>
+                <th>내용</th>
+                <th>체크</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>B0001</td>
+                <td>15점</td>
+                <td>금연 장소(호실 등)에서 흡연한 행위(전자 포함)</td>
+                <td><input type="radio" name="name" id=""></td>
+              </tr>
+              <tr>
+                <td>B0002</td>
+                <td>10점</td>
+                <td>생활관 내에서 음주를 한 행위</td>
+                <td><input type="radio" name="name" id=""></td>
+              </tr>
+              <tr>
+                <td>B0003</td>
+                <td>10점</td>
+                <td>동일한 내용으로 빌점을 3회 이상 받은 자</td>
+                <td><input type="radio" name="name" id=""></td>
+              </tr>
+            </tbody>
+          </table>
+          <h4>※별점 10점 → 학생생활관 봉사 3일</h4>
+          <h4>※벌점 15점→ 강제관 조치</h4>
+        </div>
+        <br>
+        <button id="upateBtn">상벌점 적용하기</button>
+
+      </div>
+    </div>
+  </section>
+
+
+  <style>
+    #penaltyUpdateModal {
+      width: 100vw;
+      height: 100vh;
+      background-color: #f3f3f3;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+    }
+
+    .PUM_wrap {
+      width: 60vw;
+      height: 80vh;
+      display: flex;
+      justify-content: flex-start;
+      border-radius: 15px;
+
+
+      background-color: white;
+    }
+
+    .PUM_container {
+      padding: 30px;
+    }
+  </style>
+
+  <script src="https://kit.fontawesome.com/d71a4a6ef8.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
